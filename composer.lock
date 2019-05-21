@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/aharabara/habarnam.git",
-                "reference": "56eb590b9b9fd50a09fd635c2a1cf3a01a2df1c2"
+                "reference": "660d3dc9f0db5dd5102639ff2ccfff3719269710"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aharabara/habarnam/zipball/56eb590b9b9fd50a09fd635c2a1cf3a01a2df1c2",
-                "reference": "56eb590b9b9fd50a09fd635c2a1cf3a01a2df1c2",
+                "url": "https://api.github.com/repos/aharabara/habarnam/zipball/660d3dc9f0db5dd5102639ff2ccfff3719269710",
+                "reference": "660d3dc9f0db5dd5102639ff2ccfff3719269710",
                 "shasum": ""
             },
             "require": {
@@ -43,7 +43,7 @@
                 }
             ],
             "description": "Ncurses wrapper for fast TUI building",
-            "time": "2019-05-21T17:06:09+00:00"
+            "time": "2019-05-21T19:45:15+00:00"
         }
     ],
     "packages-dev": [
