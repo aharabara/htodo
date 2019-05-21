@@ -14,12 +14,12 @@
 
             <label>Description:</label>
             <textarea id="task.description"/>
+            <hr/>
 
             <label>Current status:</label>
-            <hr/>
             <list id="task.status" on.init="\App\TaskController@taskStatuses"/>
         </panel>
-        <panel layout="horizontal" surface="left-column.bottom">
+        <panel surface="left-column.bottom">
             <button min-width="50%" margin="0, 1" on.press="\App\TaskController@addItem">Add item</button>
             <button min-width="50%" margin="0, 1" on.press="\App\TaskController@save">Save</button>
         </panel>
