@@ -1,0 +1,19 @@
+<application>
+    <view id="popup">
+        <panel id="popup" surface="popup" layout="horizontal">
+            <text align="center-middle">
+                Are you sure you want to delete it?
+            </text>
+            <button min-width="50%" margin="2, 5, 0" on.press="\App\TaskController@closePopUp">No</button>
+            <button min-width="50%" margin="2, 5, 0" on.press="\App\TaskController@deleteTask">Yes</button>
+        </panel>
+    </view>
+    <view id="login">
+        <panel surface="login" padding="4, 4">
+            <label align="center-middle">Login</label>
+            <input id="login.username"/>
+            <label visible="false" id="login.validation.username">Invalid login</label>
+            <button margin="1, 0" display="block" on.press="\App\TaskController@load">Login</button>
+        </panel>
+    </view>
+</application>
