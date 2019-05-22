@@ -6,6 +6,6 @@ chdir(__DIR__);
 require './vendor/autoload.php';
 
 $render = (new ViewRender('./views/'))->prepare();
-(new Application($render, 'login'))
+(new Application($render, 'welcome'))
     ->debug(true)
     ->handle();

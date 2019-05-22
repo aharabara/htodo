@@ -2,17 +2,18 @@
     <surfaces>
         <surface id="left-column.top">
             <pos x="0" y="0"/>
-            <pos x="40" y="-5"/>
+            <pos x="40" y="-4"/>
         </surface>
         <surface id="left-column.bottom">
             <pos x="0" y="-4"/>
             <pos x="40"/>
         </surface>
         <surface id="right-column.top">
-            <pos x="41"/>
-            <pos/>
+            <pos x="40"/>
         </surface>
+
         <surface id="login" height="15" type="centered"/>
         <surface id="popup" height="10" type="centered"/>
+        <surface id="welcome"/>
     </surfaces>
 </application>

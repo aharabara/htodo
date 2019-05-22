@@ -1,14 +1,14 @@
 <application>
-    <view id="popup">
-        <panel id="popup" surface="popup" layout="horizontal">
+    <view id="delete-popup">
+        <panel id="popup" surface="popup">
             <text align="center-middle">
                 Are you sure you want to delete it?
             </text>
-            <button min-width="50%" margin="2, 5, 0" on.press="\App\TaskController@closePopUp">No</button>
+            <button min-width="50%" margin="2, 5, 0" on.press="#main">No</button>
             <button min-width="50%" margin="2, 5, 0" on.press="\App\TaskController@deleteTask">Yes</button>
         </panel>
     </view>
-    <view id="login">
+    <view id="login-popup">
         <panel surface="login" padding="4, 4">
             <label align="center-middle">Login</label>
             <input id="login.username"/>

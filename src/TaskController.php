@@ -123,17 +123,6 @@ class TaskController extends BaseController
         $this->app->switchTo('main');
         $this->app->focusOn($this->taskList);
     }
-
-    public function confirmDelete(): void
-    {
-        $this->app->switchTo('popup');
-    }
-
-    public function closePopUp(): void
-    {
-        $this->app->switchTo('main');
-    }
-
     /**
      * @param Task $task
      */

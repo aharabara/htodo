@@ -4,7 +4,7 @@
             <list id="task-list"
                   deletable-items="true"
                   on.item.selected="\App\TaskController@taskSelect"
-                  on.item.deleting="\App\TaskController@confirmDelete"
+                  on.item.deleting="#delete-popup"
                   on.item.before-select="\App\TaskController@beforeTaskSelect"/>
         </panel>
         <panel title="Task details" surface="right-column.top">
