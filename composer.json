@@ -1,13 +1,13 @@
 {
   "autoload": {
     "classmap": [
-      "src",
-      "/home/aharabara/Projects/Experimets/habarnam/src"
+      "src"
     ]
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"
   },
   "require": {
+    "aharabara/habarnam": "v0.3.6"
   }
 }
