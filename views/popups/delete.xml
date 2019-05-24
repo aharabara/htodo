@@ -1,0 +1,7 @@
+<template id="delete-popup">
+    <section id="popup" surface="popup">
+        <p align="center-middle">Are you sure you want to delete it?</p>
+        <button min-width="50%" margin="2, 5, 0" on.press="#main">No</button>
+        <button min-width="50%" margin="2, 5, 0" on.press="\App\TaskController@deleteTask">Yes</button>
+    </section>
+</template>

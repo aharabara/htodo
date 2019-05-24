@@ -1,0 +1,22 @@
+{
+  "alias": "htodo.phar",
+  "chmod": "0755",
+  "directories": [
+    "src",
+    "vendor",
+    "views"
+  ],
+  "files": [
+    "assets/logo.txt",
+    "box.json",
+    "index.php",
+    "composer.json",
+    "composer.lock",
+    ".gitignore",
+    "readme.md",
+    "LICENSE"
+  ],
+  "main": "index.php",
+  "output": "htodo.phar",
+  "stub": true
+}

@@ -1,9 +1,7 @@
-<application>
-    <view id="welcome">
-        <panel surface="welcome">
-            <animation align="center-middle" from="./assets/logo.txt"
-                       frame-height="7" frame-counter="9" repetitions="3"
-                       on.animation.end="#login-popup"/>
-        </panel>
-    </view>
-</application>
+<template id="welcome">
+    <section surface="welcome">
+        <animation align="center-middle" from="./assets/logo.txt"
+                   frame-height="7" frame-counter="9" repetitions="3"
+                   on.animation.end="#login-popup"/>
+    </section>
+</template>

@@ -8,6 +8,7 @@ use Base\ListItem;
 use Base\OrderedList;
 use Base\TextArea;
 use Base\BaseController;
+use Base\Workspace;
 
 class TaskController extends BaseController
 {
@@ -26,13 +27,17 @@ class TaskController extends BaseController
 
     /** @var string */
     protected $username;
+    
+    /** @var Workspace */
+    protected $workspace;
 
 
     /**
      * TaskController constructor.
      * @param Application $app
+     * @param Workspace $workspace
      */
-    public function __construct(Application $app)
+    public function __construct(Application $app, Workspace $workspace)
     {
         $this->app = $app;
         $view = $app->view();
@@ -40,6 +45,7 @@ class TaskController extends BaseController
         $this->taskDescription = $view->component('task.description');
         $this->taskStatus = $view->component('task.status');
         $this->taskTitle = $view->component('task.title');
+        $this->workspace = $workspace;
     }
 
     /**
@@ -69,11 +75,10 @@ class TaskController extends BaseController
             $this->app->view()->component('login.validation.username')->setVisibility(true);
             return;
         }
-        $home = getenv('HOME');
-        if (is_dir("$home/.config/starlight") && file_exists("$home/.config/starlight/{$this->username}-tasks.ser")) {
-            $serializedData = file_get_contents("$home/.config/starlight/{$this->username}-tasks.ser");
-            $list->setItems(unserialize($serializedData) ?? []);
-        }
+
+        $tasks = $this->workspace->fromFile("{$this->username}-tasks.ser");
+        $list->setItems($tasks ?? []);
+        
         $this->app->switchTo('main');
         $this->app->focusOn($this->taskList);
     }
@@ -84,10 +89,7 @@ class TaskController extends BaseController
         if ($task) {
             $this->updateTask($task);
         }
-        $home = getenv('HOME');
-        $this->createDir("$home/.config")
-            ->createDir("$home/.config/starlight");
-        file_put_contents("$home/.config/starlight/{$this->username}-tasks.ser", serialize($this->taskList->getItems()));
+        $this->workspace->toFile("{$this->username}-tasks.ser", $this->taskList->getItems());
     }
 
     public function addItem(): void
@@ -132,17 +134,5 @@ class TaskController extends BaseController
         $task->setDescription($this->taskDescription->getText());
         $selectedStatus = $this->taskStatus->getSelectedItem();
         $task->setStatus($selectedStatus ? $selectedStatus->getValue() : Task::WAITING);
-    }
-
-    /**
-     * @param string $configFolder
-     * @return TaskController
-     */
-    protected function createDir(string $configFolder)
-    {
-        if (!is_dir($configFolder) && !mkdir($configFolder) && !is_dir($configFolder)) {
-            throw new \RuntimeException(sprintf('Directory "%s" was not created', $configFolder));
-        }
-        return $this;
     }
 }
