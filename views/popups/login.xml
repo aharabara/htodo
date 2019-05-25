@@ -1,8 +1,13 @@
 <template id="login-popup">
-    <section surface="login" padding="4, 4">
-        <label align="center-middle">Login</label>
-        <input id="login.username"/>
-        <label visible="false" id="login.validation.username">Invalid login</label>
-        <button margin="1, 0" display="block" on.press="\App\TaskController@load">Login</button>
-    </section>
+    <head>
+        <link src="/assets/styles.css"/>
+    </head>
+    <body>
+        <section surface="login" class="login-modal">
+            <label align="center-middle">Login</label>
+            <input id="login-username"/>
+            <label visible="false" id="login-validation-username">Invalid login</label>
+            <button margin="1, 0" display="block" on.press="\App\TaskController@load">Login</button>
+        </section>
+    </body>
 </template>

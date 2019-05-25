@@ -1,25 +1,30 @@
 <template id="main">
-    <section title="Tasks" surface="left-column.top">
-        <ol id="task-list"
-            deletable-items="true"
-            on.item.selected="\App\TaskController@taskSelect"
-            on.item.deleting="#delete-popup"
-            on.item.before-select="\App\TaskController@beforeTaskSelect"/>
-    </section>
-    <section title="Task details" surface="right-column.top">
-        <label>Title:</label>
-        <input id="task.title"/>
-        <hr/>
+    <head>
+        <link src="/assets/styles.css"/>
+    </head>
+    <body>
+        <section title="Tasks" surface="left-column.top">
+            <ol id="task-list"
+                deletable-items="true"
+                on.item.selected="\App\TaskController@taskSelect"
+                on.item.deleting="#delete-popup"
+                on.item.before-select="\App\TaskController@beforeTaskSelect"/>
+        </section>
+        <section title="Task details" surface="right-column.top">
+            <label>Title:</label>
+            <input id="task-title"/>
+            <hr/>
 
-        <label>Description:</label>
-        <textarea id="task.description"/>
-        <hr/>
+            <label>Description:</label>
+            <textarea id="task-description"/>
+            <hr/>
 
-        <label>Current status:</label>
-        <ol id="task.status" on.init="\App\TaskController@taskStatuses"/>
-    </section>
-    <section surface="left-column.bottom">
-        <button min-width="50%" margin="0, 1" on.press="\App\TaskController@addItem">Add item</button>
-        <button min-width="50%" margin="0, 1" on.press="\App\TaskController@save">Save</button>
-    </section>
+            <label>Current status:</label>
+            <ol id="task-status" on.init="\App\TaskController@taskStatuses"/>
+        </section>
+        <section surface="left-column.bottom">
+            <button min-width="50%" margin="0, 1" on.press="\App\TaskController@addItem">Add item</button>
+            <button min-width="50%" margin="0, 1" on.press="\App\TaskController@save">Save</button>
+        </section>
+    </body>
 </template>

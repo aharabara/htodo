@@ -1,0 +1,63 @@
+/* Base styles*/
+section{
+    background-color: black;
+    color: black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+section:focus{}
+section > figure{
+    color: red;
+}
+section > label{}
+
+section > button{
+    background: white;
+    color: black;
+}
+
+section > button:focus{
+    background: black;
+    color: yellow;
+}
+section > hr{}
+/* Base styles end */
+
+/* Welcome screen*/
+/* Welcome screen end */
+
+/* Login screen*/
+section.login-modal{
+    padding:4px 4px;
+}
+section.login-modal > input#login-username{
+    background: yellow; 
+    color: red; 
+}
+
+section.login-modal > input#login-username:focus{
+    background: green; 
+    color: red; 
+}
+section.login-modal > label#login-validation-username{}
+/* Login screen end*/
+
+/* Main screen*/
+section > ol#task-list{
+    background: white;
+    color: black;
+}
+section > input#task-title{
+    background: white;
+    color: black;
+}
+section > textarea#task-description{
+    background: white;
+    color: black;
+}
+section > ol#task-status{
+    background: white;
+    color: black;
+}

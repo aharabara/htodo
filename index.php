@@ -1,15 +1,11 @@
 <?php
 
 use Base\{Application, Installer, ViewRender, Workspace};
-use Sabberworm\CSS\RuleSet\DeclarationBlock;
 
 
 require '/home/aharabara/Projects/Experimets/habarnam/vendor/autoload.php';
 require __DIR__ .'/vendor/autoload.php';
 
-//$oCssParser = new Sabberworm\CSS\Parser(file_get_contents('styles.css'));
-//$oCssDocument = $oCssParser->parse();
-//$t = $oCssDocument->getAllSelectors();
 
 
 $workspace = new Workspace('habarnam-todo');

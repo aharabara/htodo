@@ -1,7 +1,12 @@
 <template id="welcome">
-    <section surface="welcome">
-        <animation align="center-middle" from="./assets/logo.txt"
-                   frame-height="7" frame-counter="9" repetitions="3"
-                   on.animation.end="#login-popup"/>
-    </section>
+    <head>
+        <link src="/assets/styles.css"/>
+    </head>
+    <body>
+        <section surface="welcome">
+            <figure align="center-middle" from="./assets/logo.txt"
+                       frame-height="7" frame-counter="9" repetitions="3"
+                       on.animation.end="#login-popup"/>
+        </section>
+    </body>
 </template>
