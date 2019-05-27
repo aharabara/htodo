@@ -3,7 +3,6 @@
 namespace App;
 
 use Base\Application;
-use Base\DrawableInterface;
 use Base\Input;
 use Base\ListItem;
 use Base\OrderedList;
@@ -44,17 +43,16 @@ class TaskController extends BaseController
     {
         parent::__construct($app, $workspace);
 
-        $render = $app->render();
-
+        
         // templates
-        $mainView = $render->template('main');
-        $this->loginView = $render->template('login-popup');
+        $this->loginView = $app->render()->template('login-popup');
 
         // components
-        $this->taskList = $mainView->component('task-list');
-        $this->taskDescription = $mainView->component('task-description');
-        $this->taskStatus = $mainView->component('task-status');
-        $this->taskTitle = $mainView->component('task-title');
+        $this->usernameInput = $app->findFirst('[name=username]', 'login-popup');
+        $this->taskList = $app->findFirst('[name=task-list]', 'main');
+        $this->taskDescription = $app->findFirst('[name=task-description]', 'main');
+        $this->taskStatus = $app->findFirst('[name=task-status]', 'main');
+        $this->taskTitle = $app->findFirst('[name=task-title]', 'main');
     }
 
     /**
@@ -76,9 +74,8 @@ class TaskController extends BaseController
     {
         $list = $this->taskList;
         /** @var Input $usernameInput */
-        $usernameInput = $this->loginView->component('login-username');
 
-        $this->username = $usernameInput->getText();
+        $this->username = $this->usernameInput->getText();
 
         $this->loginView->component('login-validation-username')->visibility(false);
         if (empty($this->username)) {

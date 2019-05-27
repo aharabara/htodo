@@ -1,63 +1,53 @@
 /* Base styles*/
-section{
-    background-color: black;
-    color: black;
+section {
+    border-color: white;
+    outline-color: blue;
+    caret-color: white;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 }
-section:focus{}
-section > figure{
-    color: red;
-}
-section > label{}
 
-section > button{
-    background: white;
-    color: black;
+figure {
 }
 
-section > button:focus{
-    background: black;
-    color: yellow;
+hr {
 }
-section > hr{}
-/* Base styles end */
 
-/* Welcome screen*/
-/* Welcome screen end */
+button {
+    outline-color: blue;
+    caret-color: white;
+}
+
+/*[name="username"]*/
+/*[name="task-title"] */
+/*[name="task-description"]*/
+input, textarea {
+    outline-color: white;
+    caret-color: blue;
+}
 
 /* Login screen*/
-section.login-modal{
-    padding:4px 4px;
-}
-section.login-modal > input#login-username{
-    background: yellow; 
-    color: red; 
+.login-modal {
+    padding: 4px 4px;
 }
 
-section.login-modal > input#login-username:focus{
-    background: green; 
-    color: red; 
+.login-modal label{
+    background: blue;
 }
-section.login-modal > label#login-validation-username{}
+
+
+#login-validation-username {
+    color: white;
+    visibility: hidden;
+}
+
 /* Login screen end*/
 
-/* Main screen*/
-section > ol#task-list{
-    background: white;
-    color: black;
-}
-section > input#task-title{
-    background: white;
-    color: black;
-}
-section > textarea#task-description{
-    background: white;
-    color: black;
-}
-section > ol#task-status{
-    background: white;
-    color: black;
+/*[name="task-list"]*/
+/*[name="task-status"]*/
+ol {
+    outline-color: white;
+    caret-color: blue;
 }

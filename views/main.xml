@@ -4,7 +4,7 @@
     </head>
     <body>
         <section title="Tasks" surface="left-column.top">
-            <ol id="task-list"
+            <ol name="task-list"
                 deletable-items="true"
                 on.item.selected="\App\TaskController@taskSelect"
                 on.item.deleting="#delete-popup"
@@ -12,15 +12,15 @@
         </section>
         <section title="Task details" surface="right-column.top">
             <label>Title:</label>
-            <input id="task-title"/>
+            <input name="task-title"/>
             <hr/>
 
             <label>Description:</label>
-            <textarea id="task-description"/>
+            <textarea name="task-description"/>
             <hr/>
 
             <label>Current status:</label>
-            <ol id="task-status" on.init="\App\TaskController@taskStatuses"/>
+            <ol name="task-status" on.init="\App\TaskController@taskStatuses"/>
         </section>
         <section surface="left-column.bottom">
             <button min-width="50%" margin="0, 1" on.press="\App\TaskController@addItem">Add item</button>
