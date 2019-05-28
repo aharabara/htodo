@@ -14,6 +14,9 @@ use Base\Workspace;
 class TaskController extends BaseController
 {
     /* components */
+    /** @var Label|null */
+    public $usernameInputFailed;
+    
     /** @var OrderedList */
     protected $taskList;
     /** @var Input */
@@ -42,12 +45,9 @@ class TaskController extends BaseController
     public function __construct(Application $app, Workspace $workspace)
     {
         parent::__construct($app, $workspace);
-
         
-        // templates
-        $this->loginView = $app->render()->template('login-popup');
-
         // components
+        $this->usernameInputFailed = $app->findFirst('#login-validation-username', 'login-popup');
         $this->usernameInput = $app->findFirst('[name=username]', 'login-popup');
         $this->taskList = $app->findFirst('[name=task-list]', 'main');
         $this->taskDescription = $app->findFirst('[name=task-description]', 'main');
@@ -77,9 +77,9 @@ class TaskController extends BaseController
 
         $this->username = $this->usernameInput->getText();
 
-        $this->loginView->component('login-validation-username')->visibility(false);
+        $this->usernameInputFailed->visibility(false);
         if (empty($this->username)) {
-            $this->loginView->component('login-validation-username')->visibility(true);
+            $this->usernameInputFailed->visibility(true);
             return;
         }
 

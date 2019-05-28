@@ -4,9 +4,9 @@
     </head>
     <body>
         <section surface="login" class="login-modal">
-            <label align="center-middle">Login</label>
+            <label>Login</label>
             <input name="username"/>
-            <label id="login-validation-username">Invalid login</label>
+            <label class="error" id="login-validation-username">Invalid login</label>
             <button margin="1, 0" display="block" on.press="\App\TaskController@load">Login</button>
         </section>
     </body>

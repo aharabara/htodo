@@ -10,26 +10,38 @@ section:focus{
     background: blue;
     color: white;
 }
-
+label {
+    background: blue;
+    color: white;
+}
 figure {
+    text-align: center;
 }
 
 hr {
+    background: black;
+    color: white;
+    content: '═';
 }
 
 button {
     background: blue;
     color: white;
+    margin: 0 1px;
 }
 button:focus {
     background: white;
     color: blue;
 }
-button{
-    margin: 0 1px;
-}
 button:last-child {
     margin: 0;
+}
+
+#delete-popup p{
+    text-align: center;
+}
+#delete-popup button{
+    margin: 2px 5px 0;
 }
 
 /*[name="username"]*/
@@ -38,31 +50,23 @@ button:last-child {
 input:focus, textarea:focus {
     background: white;
     color: blue;
+    caret-color: red;
 }
 
-/* Login screen*/
-.login-modal {
-    padding: 4px 4px;
-}
-
-.login-modal label{
-    background: blue;
-}
-
-
-#login-validation-username {
-    color: white;
+label.error {
+    color: red;
     visibility: hidden;
 }
 
-/* Login screen end*/
-
-/*[name="task-list"]*/
-/*[name="task-status"]*/
-ol{
+ol{/*[name="task-list"], [name="task-status"]*/
     background: black;
 }
 ol:focus {
     background: white;
     color: blue;
+}
+
+/* Login screen*/
+.login-modal {
+    padding: 4px 4px;
 }

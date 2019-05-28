@@ -4,7 +4,7 @@
     </head>
     <body>
         <section surface="welcome">
-            <figure align="center-middle" from="./assets/logo.txt"
+            <figure from="./assets/logo.txt"
                        frame-height="7" frame-counter="9" repetitions="3"
                        on.animation.end="#login-popup"/>
         </section>
