@@ -1,7 +1,6 @@
 <?php
 
 use Base\{Application, Installer, ViewRender, Workspace};
-setlocale(LC_ALL, '');
 
 require '/home/aharabara/Projects/Experimets/habarnam/vendor/autoload.php';
 require __DIR__ .'/vendor/autoload.php';

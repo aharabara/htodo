@@ -1,12 +1,14 @@
 /* Base styles*/
 section {
     border-color: white;
-    outline-color: blue;
-    caret-color: white;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+}
+section:focus{
+    background: blue;
+    color: white;
 }
 
 figure {
@@ -16,16 +18,26 @@ hr {
 }
 
 button {
-    outline-color: blue;
-    caret-color: white;
+    background: blue;
+    color: white;
+}
+button:focus {
+    background: white;
+    color: blue;
+}
+button{
+    margin: 0 1px;
+}
+button:last-child {
+    margin: 0;
 }
 
 /*[name="username"]*/
 /*[name="task-title"] */
 /*[name="task-description"]*/
-input, textarea {
-    outline-color: white;
-    caret-color: blue;
+input:focus, textarea:focus {
+    background: white;
+    color: blue;
 }
 
 /* Login screen*/
@@ -47,7 +59,10 @@ input, textarea {
 
 /*[name="task-list"]*/
 /*[name="task-status"]*/
-ol {
-    outline-color: white;
-    caret-color: blue;
+ol{
+    background: black;
+}
+ol:focus {
+    background: white;
+    color: blue;
 }
