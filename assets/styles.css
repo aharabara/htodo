@@ -60,10 +60,14 @@ label.error {
 
 ol{/*[name="task-list"], [name="task-status"]*/
     background: black;
+    color: white;
 }
 ol:focus {
     background: white;
     color: blue;
+}
+ol li{
+    min-height: 1px;
 }
 
 /* Login screen*/

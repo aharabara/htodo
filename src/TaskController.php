@@ -55,21 +55,6 @@ class TaskController extends BaseController
         $this->taskTitle = $app->findFirst('[name=task-title]', 'main');
     }
 
-    /**
-     * @param OrderedList $list
-     */
-    public function taskStatuses(OrderedList $list): void
-    {
-        $list->addItems(
-            new ListItem(Task::WAITING, 'Waiting'),
-            new ListItem(Task::OLD, 'Old'),
-            new ListItem(Task::FAILED, 'Failed'),
-            new ListItem(Task::DONE, 'Done'),
-            new ListItem(Task::IN_PROGRESS, 'In progress')
-        );
-    }
-
-
     public function load(): void
     {
         $list = $this->taskList;

@@ -24,9 +24,9 @@ class Task extends ListItem
      */
     public function __construct(string $value)
     {
-        parent::__construct($value);
         $this->status = self::WAITING;
         $this->description = 'Task description...';
+        parent::__construct([]);
     }
 
     /**

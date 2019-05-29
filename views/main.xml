@@ -20,7 +20,13 @@
             <hr/>
 
             <label>Current status:</label>
-            <ol name="task-status" on.init="\App\TaskController@taskStatuses"/>
+            <ol name="task-status">
+                <li value="waiting">Waiting</li> <!-- should be changed to checkboxes -->
+                <li value="in_progress">In progress</li>
+                <li value="done">Done</li>
+                <li value="failed">Failed</li>
+                <li value="old">Old</li>
+            </ol>
         </section>
         <section surface="left-column.bottom">
             <button min-width="50%" margin="0, 1" on.press="\App\TaskController@addItem">Add item</button>
