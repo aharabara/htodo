@@ -3,13 +3,13 @@
 namespace App;
 
 use Base\Application;
-use Base\Input;
-use Base\Label;
-use Base\OrderedList;
-use Base\Template;
-use Base\TextArea;
-use Base\BaseController;
-use Base\Workspace;
+use Base\Components\Input;
+use Base\Components\Label;
+use Base\Components\OrderedList\OrderedList;
+use Base\Components\TextArea;
+use Base\Core\BaseController;
+use Base\Core\Template;
+use Base\Core\Workspace;
 
 class TaskController extends BaseController
 {
@@ -114,8 +114,7 @@ class TaskController extends BaseController
     public function deleteTask(): void
     {
         $this->taskList->delete($this->taskList->getFocusedItem());
-        $view = 'main';
-        $this->switchTo($view);
+        $this->switchTo('main');
         $this->focusOn($this->taskList);
     }
 

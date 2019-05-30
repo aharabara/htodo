@@ -1,6 +1,6 @@
 <?php
 
-use Base\{Application, Installer, ViewRender, Workspace};
+use Base\{Application, Core\Installer, Core\Workspace, Services\ViewRender};
 
 require '/home/aharabara/Projects/Experimets/habarnam/vendor/autoload.php';
 require __DIR__ . '/vendor/autoload.php';

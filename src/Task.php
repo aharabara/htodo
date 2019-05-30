@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Base\ListItem;
+use Base\Components\OrderedList\ListItem;
 
-class Task extends ListItem
+class Task extends ListItem implements \Serializable
 {
     public const WAITING = 'waiting';
     public const IN_PROGRESS = 'in_progress';
@@ -74,5 +74,37 @@ class Task extends ListItem
     {
         $this->description = $content;
         return $this;
+    }
+
+    /**
+     * String representation of object
+     * @link https://php.net/manual/en/serializable.serialize.php
+     * @return string the string representation of the object or null
+     * @since 5.1.0
+     */
+    public function serialize()
+    {
+        return serialize([
+            'title' => $this->text,
+            'status' => $this->status,
+            'description' => $this->description,
+        ]);
+    }
+
+    /**
+     * Constructs the object
+     * @link https://php.net/manual/en/serializable.unserialize.php
+     * @param string $serialized <p>
+     * The string representation of the object.
+     * </p>
+     * @return void
+     * @since 5.1.0
+     */
+    public function unserialize($serialized)
+    {
+        $data = unserialize($serialized);
+        $this->text = $data['title'] ?? '';
+        $this->status = $data['status'] ?? self::WAITING;
+        $this->description = $data['description'] ?? '';
     }
 }
