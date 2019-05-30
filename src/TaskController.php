@@ -4,7 +4,7 @@ namespace App;
 
 use Base\Application;
 use Base\Input;
-use Base\ListItem;
+use Base\Label;
 use Base\OrderedList;
 use Base\Template;
 use Base\TextArea;

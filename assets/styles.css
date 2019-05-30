@@ -27,7 +27,7 @@ hr {
 button {
     background: blue;
     color: white;
-    margin: 0 1px;
+    margin: 0 1px 1px 0;
 }
 button:focus {
     background: white;
@@ -41,7 +41,7 @@ button:last-child {
     text-align: center;
 }
 #delete-popup button{
-    margin: 2px 5px 0;
+    margin: 2px 5px 1px;
 }
 
 /*[name="username"]*/
@@ -50,7 +50,7 @@ button:last-child {
 input:focus, textarea:focus {
     background: white;
     color: blue;
-    caret-color: red;
+    caret-color: cyan;
 }
 
 label.error {
@@ -62,12 +62,14 @@ ol{/*[name="task-list"], [name="task-status"]*/
     background: black;
     color: white;
 }
+
 ol:focus {
     background: white;
     color: blue;
 }
-ol li{
-    min-height: 1px;
+
+ol li{ /* @todo still doesn't work for class extension and dynamically */
+    height: 1px;
 }
 
 /* Login screen*/
