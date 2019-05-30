@@ -44,7 +44,7 @@ class Task extends ListItem
             self::WAITING,
         ];
         if (!in_array($status, $allowedStates, true)) {
-            throw new \UnexpectedValueException('Wrong Task state.');
+            throw new \Error('Wrong Task state.');
         }
         $this->status = $status;
         return $this;

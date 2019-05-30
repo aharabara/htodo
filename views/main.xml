@@ -29,8 +29,8 @@
             </ol>
         </section>
         <section surface="left-column.bottom">
-            <button min-width="50%" margin="0, 1" on.press="\App\TaskController@addItem">Add item</button>
-            <button min-width="50%" margin="0, 1" on.press="\App\TaskController@save">Save</button>
+            <button on.press="\App\TaskController@addItem">Add item</button>
+            <button on.press="\App\TaskController@save">Save</button>
         </section>
     </body>
 </template>
