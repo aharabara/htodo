@@ -16,10 +16,7 @@ if (!$installer->isInstalled()) {
 }
 
 /* folder with surfaces.xml and other view files*/
-$viewsFolder = './views/';
-$currentViewID = 'main';
-
-$render = new ViewRender($viewsFolder);
+$render = new ViewRender(__DIR__. '/views/');
 $workspace = new Workspace('habarnam-chat');
 
 (new Application($workspace, $render->prepare(), 'welcome'))
