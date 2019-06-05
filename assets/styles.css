@@ -25,16 +25,22 @@ hr {
 }
 
 button {
+    display: block;
     background: blue;
     color: white;
     margin: 0 1px 1px 0;
 }
+
 button:focus {
     background: white;
     color: blue;
 }
 button:last-child {
     margin: 0;
+}
+
+.btn-inline{
+    display: inline;
 }
 
 #delete-popup p{

@@ -29,8 +29,8 @@
             </ol>
         </section>
         <section surface="left-column.bottom">
-            <button on.press="\App\TaskController@addItem">Add item</button>
-            <button on.press="\App\TaskController@save">Save</button>
+            <button class="btn-inline" on.press="\App\TaskController@addItem">Add item</button>
+            <button class="btn-inline" on.press="\App\TaskController@save">Save</button>
         </section>
     </body>
 </template>
