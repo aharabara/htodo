@@ -2,7 +2,6 @@
 
 use Base\{Application, Core\Installer, Core\Workspace, Services\ViewRender};
 
-require '/home/aharabara/Projects/Experimets/habarnam/vendor/autoload.php';
 require __DIR__ . '/vendor/autoload.php';
 
 
@@ -17,7 +16,6 @@ if (!$installer->isInstalled()) {
 
 /* folder with surfaces.xml and other view files*/
 $render = new ViewRender(__DIR__. '/views/');
-$workspace = new Workspace('habarnam-chat');
 
 (new Application($workspace, $render->prepare(), 'welcome'))
     ->debug(true)
