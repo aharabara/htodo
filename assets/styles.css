@@ -1,20 +1,21 @@
 /* Base styles*/
-section {
-    border-color: white;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+section, figure {
+    color: cyan;
+    background: black;
+}
+figure {
+    text-align: center;
 }
 section:focus{
-    background: blue;
+    background: cyan;
     color: white;
 }
 label {
-    background: blue;
-    color: white;
+    background: cyan;
+    color: black;
 }
-figure {
+
+.login-modal label{
     text-align: center;
 }
 
@@ -26,14 +27,13 @@ hr {
 
 button {
     display: block;
-    background: blue;
+    background: black;
     color: white;
-    margin: 0 1px 1px 0;
 }
 
 button:focus {
-    background: white;
-    color: blue;
+    background: black;
+    color: cyan;
 }
 button:last-child {
     margin: 0;
@@ -47,21 +47,24 @@ button:last-child {
     text-align: center;
 }
 #delete-popup button{
-    margin: 2px 5px 1px;
+    width: 50%;
+    margin: 2px 0 1px;
+    display: inline;
 }
 
 /*[name="username"]*/
 /*[name="task-title"] */
 /*[name="task-description"]*/
 input:focus, textarea:focus {
-    background: white;
-    color: blue;
+    background: black;
+    color: cyan;
     caret-color: cyan;
 }
 
 label.error {
     color: red;
     visibility: hidden;
+    margin: 0;
 }
 
 ol{/*[name="task-list"], [name="task-status"]*/
@@ -70,8 +73,7 @@ ol{/*[name="task-list"], [name="task-status"]*/
 }
 
 ol:focus {
-    background: white;
-    color: blue;
+    color: cyan;
 }
 
 ol li{ /* @todo still doesn't work for class extension and dynamically */
