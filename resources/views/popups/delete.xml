@@ -1,6 +1,6 @@
 <template id="delete-popup">
     <head>
-        <link src="/assets/styles.css"/>
+        <link src="/resources/assets/styles.css"/>
     </head>
     <body>
         <section id="delete-popup" surface="popup">

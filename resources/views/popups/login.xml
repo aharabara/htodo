@@ -1,6 +1,6 @@
 <template id="login-popup">
     <head>
-        <link src="/assets/styles.css"/>
+        <link src="/resources/assets/styles.css"/>
     </head>
     <body>
         <section surface="login" class="login-modal">

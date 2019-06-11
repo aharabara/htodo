@@ -16,7 +16,7 @@ class TaskController extends BaseController
     /* components */
     /** @var Label|null */
     public $usernameInputFailed;
-    
+
     /** @var OrderedList */
     protected $taskList;
     /** @var Input */
@@ -39,20 +39,21 @@ class TaskController extends BaseController
 
     /**
      * TaskController constructor.
+     *
      * @param Application $app
-     * @param Workspace $workspace
+     * @param Workspace   $workspace
+     * @param Input       $usernameInput
      */
-    public function __construct(Application $app, Workspace $workspace)
-    {
+    public function __construct(Application $app, Workspace $workspace) {
         parent::__construct($app, $workspace);
-        
+
         // components
         $this->usernameInputFailed = $app->findFirst('#login-validation-username', 'login-popup');
-        $this->usernameInput = $app->findFirst('[name=username]', 'login-popup');
-        $this->taskList = $app->findFirst('[name=task-list]', 'main');
-        $this->taskDescription = $app->findFirst('[name=task-description]', 'main');
-        $this->taskStatus = $app->findFirst('[name=task-status]', 'main');
-        $this->taskTitle = $app->findFirst('[name=task-title]', 'main');
+        $this->usernameInput       = $app->findFirst('[name=username]', 'login-popup');
+        $this->taskList            = $app->findFirst('[name=task-list]', 'main');
+        $this->taskDescription     = $app->findFirst('[name=task-description]', 'main');
+        $this->taskStatus          = $app->findFirst('[name=task-status]', 'main');
+        $this->taskTitle           = $app->findFirst('[name=task-title]', 'main');
     }
 
     public function load(): void
@@ -62,14 +63,21 @@ class TaskController extends BaseController
 
         $this->username = $this->usernameInput->getText();
 
+        $this->switchTo('main');
         $this->usernameInputFailed->visibility(false);
         if (empty($this->username)) {
             $this->usernameInputFailed->visibility(true);
+
             return;
         }
-
         $tasks = $this->workspace->fromFile("{$this->username}-tasks.ser");
-        $list->setItems($tasks ?? []);
+        if ($tasks) {
+            $list->setItems($tasks);
+            $firstTask = reset($tasks);
+            if ($firstTask) {
+                $this->taskSelect($firstTask);
+            }
+        }
 
         $this->switchTo('main');
         $this->focusOn($this->taskList);

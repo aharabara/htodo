@@ -10,6 +10,11 @@ section:focus{
     background: cyan;
     color: white;
 }
+
+textarea{
+    color: white;
+    background: black;
+}
 label {
     background: cyan;
     color: black;

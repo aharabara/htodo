@@ -1,10 +1,10 @@
 <template id="welcome">
     <head>
-        <link src="/assets/styles.css"/>
+        <link src="/resources/assets/styles.css"/>
     </head>
     <body>
         <section surface="welcome">
-            <figure from="./assets/logo.txt"
+            <figure from="/resources/assets/logo.txt"
                        frame-height="7" frame-counter="9" repetitions="3"
                        on.animation.end="#login-popup"/>
         </section>

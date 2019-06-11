@@ -1,6 +1,6 @@
 <template id="main">
     <head>
-        <link src="/assets/styles.css"/>
+        <link src="/resources/assets/styles.css"/>
     </head>
     <body>
         <section title="Tasks" surface="left-column.top">
