@@ -72,7 +72,9 @@ class TaskController extends BaseController
         }
         $tasks = $this->workspace->fromFile("{$this->username}-tasks.ser");
         if ($tasks) {
-            $list->setItems($tasks);
+            foreach ($tasks as $task) {
+                $list->addComponent($task);
+            }
             $firstTask = reset($tasks);
             if ($firstTask) {
                 $this->taskSelect($firstTask);
@@ -89,7 +91,7 @@ class TaskController extends BaseController
         if ($task) {
             $this->updateTask($task);
         }
-        $this->workspace->toFile("{$this->username}-tasks.ser", $this->taskList->getItems());
+        $this->workspace->toFile("{$this->username}-tasks.ser", $this->taskList->getComponents());
     }
 
     public function addItem(): void
@@ -101,7 +103,7 @@ class TaskController extends BaseController
         $newTask = new Task('Task title');
         $newTask->setStatus(Task::WAITING);
         $this->taskList
-            ->addItems($newTask)
+            ->addComponent($newTask)
             ->selectItem($newTask);
 
         $this->focusOn($this->taskTitle);
