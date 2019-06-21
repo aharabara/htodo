@@ -48,8 +48,8 @@ class TaskController extends BaseController
         parent::__construct($app, $workspace);
 
         // components
-        $this->usernameInputFailed = $app->findFirst('#login-validation-username', 'login-popup');
-        $this->usernameInput       = $app->findFirst('[name=username]', 'login-popup');
+        $this->usernameInputFailed = $app->findFirst('#login-validation-username', 'popups.login');
+        $this->usernameInput       = $app->findFirst('[name=username]', 'popups.login');
         $this->taskList            = $app->findFirst('[name=task-list]', 'main');
         $this->taskDescription     = $app->findFirst('[name=task-description]', 'main');
         $this->taskStatus          = $app->findFirst('[name=task-status]', 'main');

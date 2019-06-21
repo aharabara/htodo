@@ -1,6 +1,9 @@
 <?php
 
-//require __DIR__ . '/../habarnam/vendor/autoload.php';
-require __DIR__ . '/vendor/autoload.php';
+use Base\Application;
 
-\Base\Application::boot(true);
+chdir(__DIR__);
+require '../habarnam/vendor/autoload.php';
+require './vendor/autoload.php';
+
+Application::boot(true);

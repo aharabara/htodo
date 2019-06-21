@@ -1,11 +1,12 @@
 /* Base styles*/
-section, figure {
+figure, label, section, figure {
     color: cyan;
     background: black;
 }
 figure {
     text-align: center;
 }
+
 section:focus{
     background: cyan;
     color: white;
@@ -15,13 +16,30 @@ textarea{
     color: white;
     background: black;
 }
-label {
-    background: cyan;
-    color: black;
-}
 
 .login-modal label{
     text-align: center;
+}
+.left-column, .right-column{
+    display: inline;
+    height: 100%;
+}
+.left-column{
+    width: 35%;
+    padding: 0 0 0 0;
+}
+.right-column{
+    width: 65%;
+}
+
+.left-column-top{
+    width: 100%;
+    height: 85%;
+}
+
+.left-column-bottom{
+    width: 100%;
+    height: 15%;
 }
 
 hr {
@@ -86,6 +104,12 @@ ol li{ /* @todo still doesn't work for class extension and dynamically */
 }
 
 /* Login screen*/
-.login-modal {
+
+
+.login-modal{
+    /*margin: auto;*/ /*@todo need to implement to allow vertical and horizontal align */
+    width: 50%;
+    height: 50%;
+    display: inline;
     padding: 4px 4px;
 }

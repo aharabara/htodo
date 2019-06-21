@@ -1,16 +1,22 @@
-<template id="main">
+<template>
     <head>
         <link src="/resources/assets/styles.css"/>
     </head>
     <body>
-        <section title="Tasks" surface="left-column.top">
-            <ol name="task-list"
-                deletable-items="true"
-                on.item.selected="\App\TaskController@taskSelect"
-                on.item.deleting="#delete-popup"
-                on.item.before-select="\App\TaskController@beforeTaskSelect"/>
+        <section class="left-column">
+            <section title="Tasks" class="left-column-top">
+                <ol name="task-list"
+                    deletable-items="true"
+                    on.item.selected="\App\TaskController@taskSelect"
+                    on.item.deleting="#popups.delete"
+                    on.item.before-select="\App\TaskController@beforeTaskSelect"/>
+            </section>
+            <section class="left-column-bottom">
+                <button class="btn-inline" on.press="\App\TaskController@addItem">Add item</button>
+                <button class="btn-inline" on.press="\App\TaskController@save">Save</button>
+            </section>
         </section>
-        <section title="Task details" surface="right-column.top">
+        <section title="Task details" class="right-column">
             <label>Title:</label>
             <input name="task-title"/>
             <hr/>
@@ -27,10 +33,6 @@
                 <li value="failed">Failed</li>
                 <li value="old">Old</li>
             </ol>
-        </section>
-        <section surface="left-column.bottom">
-            <button class="btn-inline" on.press="\App\TaskController@addItem">Add item</button>
-            <button class="btn-inline" on.press="\App\TaskController@save">Save</button>
         </section>
     </body>
 </template>

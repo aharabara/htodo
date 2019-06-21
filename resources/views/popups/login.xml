@@ -1,9 +1,9 @@
-<template id="login-popup">
+<template>
     <head>
         <link src="/resources/assets/styles.css"/>
     </head>
     <body>
-        <section surface="login" class="login-modal">
+        <section class="login-modal">
             <label>|  Login  |</label>
             <input name="username"/>
             <label class="error" id="login-validation-username">Invalid login</label>

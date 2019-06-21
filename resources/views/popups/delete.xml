@@ -3,7 +3,7 @@
         <link src="/resources/assets/styles.css"/>
     </head>
     <body>
-        <section id="delete-popup" surface="popup">
+        <section id="delete-popup" class="popup">
             <p>Are you sure you want to delete it?</p>
             <button min-width="50%" on.press="#main">No</button>
             <button min-width="50%" on.press="\App\TaskController@deleteTask">Yes</button>
